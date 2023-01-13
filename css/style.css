@@ -153,11 +153,22 @@ select {
 /* CSS VARIABLES */
 :root {
     --blog-primary-color: #A4BEF3;
+    --blog-secondary-color: whitesmoke;
     --blog-primary-text-color: #000000;
     --blog-secondary-text-color: #fff;
-
     --blog-primary-padding: 2em;
     --blog-primary-margin: 2rem;
+    --blog-section-padding: 1em;
+}
+
+/* General Settings */
+button {
+    border: none;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -170,16 +181,84 @@ body {
     color: #1f2839;
 }
 
+/* Navigation Bar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: var(--blog-primary-padding);
+    padding-right: var(--blog-primary-padding);
+    padding-top: 0.7rem;
+    background-color: var(--blog-primary-color);
+}
 
+nav h1 {
+    font-size: 24px;
+    font-weight: bolder;
+}
 
+nav a.login-link {
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+}
 
 /* Header Styling ******/
 header {
     background-color: var(--blog-primary-color);
     padding: var(--blog-primary-padding);
-    height: 80vh;
+    height: 60vh;
 }
 
 header h1 {
     font-weight: bolder;
+}
+
+/* Main Section Styling *****/
+main {
+    background-color: var(--blog-secondary-color);
+    height: 100vh;
+}
+
+main aside {
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 25%;
+}
+
+/* Button Aside Div */
+main aside div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    /* border: 2px solid red; */
+    height: 500px;
+    padding: var(--blog-primary-padding);
+}
+
+main aside div p.button-p {
+    color: red;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #1f2839;
+}
+
+button.btn {
+    color: #1f2839;
+    font-size: 16px;
+    background-color: whitesmoke;
+    transition: background-color 300ms ease-in-out;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+}
+
+button.btn:hover {
+    background-color: var(--blog-primary-color);
+    cursor: pointer;
 }
