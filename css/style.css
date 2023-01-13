@@ -217,12 +217,14 @@ header h1 {
 /* Main Section Styling *****/
 main {
     background-color: var(--blog-secondary-color);
-    height: 100vh;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 main aside {
     height: 100%;
-    position: relative;
+    position: sticky;
     top: 0;
     left: 0;
     width: 25%;
@@ -264,3 +266,38 @@ button.btn:hover {
 }
 
 /* Section Blog Grid Styling */
+section.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 0.7rem;
+}
+
+div.item {
+    width: 360px;
+}
+
+div.item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+div.blog-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.blog-title h2,
+div.blog-title p {
+    font-size: 24px;
+    color: var(--blog-primary-text-color);
+}
+
+p.blog-p {
+    color: var(--blog-primary-text-color);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Add MOBILE SCREEN MEDIA QUERIES */
