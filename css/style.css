@@ -150,4 +150,36 @@ select {
     line-height: 1.5;
 }
 
+/* CSS VARIABLES */
+:root {
+    --blog-primary-color: #A4BEF3;
+    --blog-primary-text-color: #000000;
+    --blog-secondary-text-color: #fff;
+
+    --blog-primary-padding: 2em;
+    --blog-primary-margin: 2rem;
+}
+
+
 /* Render CSS */
+body {
+    font-family: system-ui, serif;
+    font-size: 32px;
+    line-height: 1.5;
+    background-color: #f9f0de;
+    color: #1f2839;
+}
+
+
+
+
+/* Header Styling ******/
+header {
+    background-color: var(--blog-primary-color);
+    padding: var(--blog-primary-padding);
+    height: 80vh;
+}
+
+header h1 {
+    font-weight: bolder;
+}
