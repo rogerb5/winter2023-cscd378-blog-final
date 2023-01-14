@@ -1,27 +1,37 @@
 "use strict";
 
-const filterBtns = document.querySelectorAll("button.btn");
+const filterBtns = Array.from(document.querySelectorAll("button.btn"));
+const itemTag = Array.from(document.querySelectorAll("div.item"));
+console.log(itemTag)
 
-// traverses each button 
-// a method will be applied according to index
+/*
+    Traverses each button
+    and resets the border colder according to the 
+    button attribute and item attribute
+
+    testing purposes
+*/
 filterBtns.forEach((btn, idx) => {
     btn.addEventListener("click", () => {
         if (idx === 0) {
-            alert("You have reset the filter");
+            itemTag.forEach(item => {
+                item.style.border = 'solid 2px red';
+            })
         } else {
-            alert("You clicked button " + idx);
+
+            itemTag.forEach(item => {
+                item.style.border = '2px solid yellow';
+            })
+
+            let btnAttribute = btn.getAttribute('data-filter');
+            // console.log(btnAttribute)
+            itemTag.forEach(item => {
+                let itemAttribute = item.getAttribute('data-filter');
+                // console.log(typeof itemAttribute);
+                if (btnAttribute.includes(itemAttribute)) {
+                    item.style.border = '2px solid blue';
+                }
+            })
         }
     })
 })
-
-// takes a filter and tag as parameters
-// and get's each buttons attribute to show
-// the respective blog 
-function filterTag() {
-
-}
-
-// reset filter
-function resetFilter() {
-
-}

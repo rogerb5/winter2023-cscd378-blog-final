@@ -27,15 +27,16 @@
         <aside class="categories">
             <div class="button-div">
                 <p class="button-p">Blog Categories</p>
-                <button data-filter data-reset="true" class="btn">Reset filter</button>
-                <button data-filter data-reset="true" class="btn">Show A</button>
-                <button data-filter data-reset="true" class="btn">Show B</button>
-                <button data-filter data-reset="true" class="btn">Show C</button>
+                <button data-filter="all" class="btn">All</button>
+                <button data-filter="category-a" class="btn">Show A</button>
+                <button data-filter="category-b" class="btn">Show B</button>
+                <button data-filter="category-c" class="btn">Show C</button>
             </div>
         </aside>
 
         <section class="blog-grid">
-            <div class="item">
+
+            <div data-filter="category-a " class="item">
                 <img loading="lazy" src="assets/img/300.png" alt="placeholder image">
                 <div class="blog-title">
                     <h2>Title</h2>
@@ -45,7 +46,8 @@
                     first blog description
                 </p>
             </div>
-            <div class="item">
+
+            <div data-filter="category-b" class="item">
                 <img loading="lazy" src="assets/img/300.png" alt="placeholder image">
                 <div class="blog-title">
                     <h2>Breakfast Wrap</h2>
@@ -58,7 +60,8 @@
                     consequuntur blanditiis possimus quae veniam?
                 </p>
             </div>
-            <div class="item">
+
+            <div data-filter="category-c" class="category-c item">
                 <img loading="lazy" src="assets/img/300.png" alt="placeholder image">
                 <div class="blog-title">
                     <h2>Breakfast Wrap</h2>
@@ -68,7 +71,8 @@
                     third blog description
                 </p>
             </div>
-            <div class="item">
+
+            <div data-filter="category-a" class="item">
                 <img loading="lazy" src="assets/img/300.png" alt="placeholder image">
                 <div class="blog-title">
                     <h2>Breakfast Wrap</h2>
@@ -79,10 +83,11 @@
                 </p>
             </div>
 
+
         </section>
     </main>
 
-    <script src="js/lazyload.js"></script>
+    <!-- <script src="js/lazyload.js"></script> -->
     <script src="js/app.js"></script>
 </body>
 
