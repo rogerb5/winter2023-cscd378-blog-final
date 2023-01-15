@@ -268,14 +268,16 @@ button.btn:hover {
 /* Section Blog Grid Styling */
 section.blog-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    width: 60%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
     margin-top: 0.7rem;
 }
 
 div.item {
     width: 360px;
+    border: 2px solid transparent;
+    background-color: gainsboro;
 }
 
 div.item img {

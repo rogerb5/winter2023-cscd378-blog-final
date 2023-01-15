@@ -1,37 +1,64 @@
 "use strict";
-
-const filterBtns = Array.from(document.querySelectorAll("button.btn"));
+const btnTag = Array.from(document.querySelectorAll("button.btn"));
 const itemTag = Array.from(document.querySelectorAll("div.item"));
-console.log(itemTag)
+
+/*  
+    Applies certain filter setting according to the 
+    button index. 
+*/
+function applyFilter() {
+    btnTag.forEach((btn, btnIndex) => {
+        btn.addEventListener("click", () => {
+            if (btnIndex === 0) {
+                resetFilter(itemTag)
+            } else {
+                itemTag.forEach(item => {
+                    item.style.display = 'block';
+                })
+                filterValues(itemTag, btn)
+            }
+        })
+    })
+}
 
 /*
-    Traverses each button
-    and resets the border colder according to the 
-    button attribute and item attribute
-
-    testing purposes
+    Takes an item array as a parameter, and
+    set's the div item's display to block
 */
-filterBtns.forEach((btn, idx) => {
-    btn.addEventListener("click", () => {
-        if (idx === 0) {
-            itemTag.forEach(item => {
-                item.style.border = 'solid 2px red';
-            })
+function resetFilter(itemArr) {
+    itemArr.forEach(item => {
+        item.style.display = 'block';
+    })
+}
+
+/*
+    Takes an item array and button data as parameters
+    Builds a new array of the items attributes and filters
+    the button clicked attribute.
+*/
+function filterValues(itemArr, btnData) {
+    let attributeArray = [];
+    let btnAttribute = btnData.getAttribute('data-filter');
+
+    for (let index = 0; index <= itemArr.length - 1; index++) {
+        attributeArray.push(itemArr[index].getAttribute('data-filter'));
+    }
+
+    // builds filtered array
+    const result = attributeArray.filter((value => {
+        return value.trim().includes(btnAttribute);
+    }))
+
+    itemTag.forEach(item => {
+        let itemAttribute = item.getAttribute('data-filter');
+        if (itemAttribute.includes(result) && result.length >= 1) {
+            item.style.border = 'block';
+            console.log(item);
         } else {
-
-            itemTag.forEach(item => {
-                item.style.border = '2px solid yellow';
-            })
-
-            let btnAttribute = btn.getAttribute('data-filter');
-            // console.log(btnAttribute)
-            itemTag.forEach(item => {
-                let itemAttribute = item.getAttribute('data-filter');
-                // console.log(typeof itemAttribute);
-                if (btnAttribute.includes(itemAttribute)) {
-                    item.style.border = '2px solid blue';
-                }
-            })
+            item.style.display = 'none'
         }
     })
-})
+    console.log("Result Array ", result);
+}
+
+applyFilter();
