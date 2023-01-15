@@ -3,7 +3,7 @@ const btnTag = Array.from(document.querySelectorAll("button.btn"));
 const itemTag = Array.from(document.querySelectorAll("div.item"));
 
 /*  
-    Applies certain filter setting according to the 
+    Applies filter setting according to the 
     button index. 
 */
 function applyFilter() {
@@ -13,7 +13,7 @@ function applyFilter() {
                 resetFilter(itemTag)
             } else {
                 itemTag.forEach(item => {
-                    item.style.display = 'block';
+                    setDisplayBlock(item);
                 })
                 filterValues(itemTag, btn)
             }
@@ -27,7 +27,7 @@ function applyFilter() {
 */
 function resetFilter(itemArr) {
     itemArr.forEach(item => {
-        item.style.display = 'block';
+        setDisplayBlock(item);
     })
 }
 
@@ -44,7 +44,6 @@ function filterValues(itemArr, btnData) {
         attributeArray.push(itemArr[index].getAttribute('data-filter'));
     }
 
-    // builds filtered array
     const result = attributeArray.filter((value => {
         return value.trim().includes(btnAttribute);
     }))
@@ -52,13 +51,22 @@ function filterValues(itemArr, btnData) {
     itemTag.forEach(item => {
         let itemAttribute = item.getAttribute('data-filter');
         if (result.includes(itemAttribute) && result.length >= 1) {
-            item.style.border = 'block';
-            console.log(item);
+            setDisplayBlock(item);
         } else {
-            item.style.display = 'none'
+            setDisplayNone(item);
         }
     })
-    console.log("Result Array ", result);
 }
 
+// Set's an item's display as block
+function setDisplayBlock(item) {
+    item.style.display = 'block';
+}
+
+// Sets an item's display as none
+function setDisplayNone(item) {
+    item.style.display = 'none';
+}
+
+// run on load
 applyFilter();
