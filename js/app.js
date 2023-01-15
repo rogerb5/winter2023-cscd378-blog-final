@@ -51,7 +51,7 @@ function filterValues(itemArr, btnData) {
 
     itemTag.forEach(item => {
         let itemAttribute = item.getAttribute('data-filter');
-        if (itemAttribute.includes(result) && result.length >= 1) {
+        if (result.includes(itemAttribute) && result.length >= 1) {
             item.style.border = 'block';
             console.log(item);
         } else {
