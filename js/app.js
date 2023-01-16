@@ -34,7 +34,7 @@ function resetFilter(itemArr) {
 /*
     Takes an item array and button data as parameters
     Builds a new array of the items attributes and filters
-    the button clicked attribute.
+    according to button clicked attribute.
 */
 function filterValues(itemArr, btnData) {
     let attributeArray = [];

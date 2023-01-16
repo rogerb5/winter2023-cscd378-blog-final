@@ -152,8 +152,9 @@ select {
 
 /* CSS VARIABLES */
 :root {
-    --blog-primary-color: #A4BEF3;
+    --blog-primary-color: #E0E8F9;
     --blog-secondary-color: whitesmoke;
+    --blog-third-color: navy;
     --blog-primary-text-color: #000000;
     --blog-secondary-text-color: #fff;
     --blog-primary-padding: 2em;
@@ -260,6 +261,10 @@ button.btn {
     padding: 0.4rem 1rem 0.4rem 1rem;
 }
 
+button.btn.active {
+    background-color: var(--blog-primary-color);
+}
+
 button.btn:hover {
     background-color: var(--blog-primary-color);
     cursor: pointer;
@@ -271,13 +276,11 @@ section.blog-grid {
     width: 60%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-    margin-top: 0.7rem;
+    margin: 0.7rem;
 }
 
 div.item {
     width: 360px;
-    border: 2px solid transparent;
-    background-color: gainsboro;
 }
 
 div.item img {
@@ -287,19 +290,60 @@ div.item img {
 
 div.blog-title {
     display: flex;
+    margin-top: 0.8rem;
+    font-weight: bolder;
+    align-items: center;
     justify-content: space-between;
 }
 
 div.blog-title h2,
 div.blog-title p {
-    font-size: 24px;
-    color: var(--blog-primary-text-color);
+    font-size: 20px;
+    color: var(--blog-third-color);
 }
+
+div.blog-title p {
+    background-color: var(--blog-primary-color);
+    padding: 0.33rem;
+}
+
 
 p.blog-p {
     color: var(--blog-primary-text-color);
     font-size: 18px;
     font-weight: 400;
+    color: var(--blog-third-color);
 }
 
 /* Add MOBILE SCREEN MEDIA QUERIES */
+
+@media (max-width: 600px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    main aside {
+        background-color: transparent;
+        position: sticky;
+        top: 0px;
+        left: 0;
+        height: 140px;
+        display: flex;
+        width: 100%;
+        z-index: 2;
+    }
+
+    section.blog-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    main aside div {
+        flex-direction: row;
+    }
+
+}
