@@ -1,7 +1,20 @@
 "use strict";
 const btnTag = Array.from(document.querySelectorAll("button.btn"));
 const itemTag = Array.from(document.querySelectorAll("div.item"));
+const sectionGrid = document.querySelector('section.blog-grid');
+const sortBtn = document.querySelector("button.sort");
+const spanTag = document.querySelector("span");
 
+/* 
+    Sorts the order of blog posts according
+    to flexbox properties
+*/
+function sortOrder() {
+    sortBtn.addEventListener("click", () => {
+        sectionGrid.classList.toggle('sort');
+        spanTag.classList.toggle('change');
+    })
+}
 /*  
     Applies filter setting according to the 
     button index. 
@@ -11,6 +24,8 @@ function applyFilter() {
         btn.addEventListener("click", () => {
             if (btnIndex === 0) {
                 resetFilter(itemTag)
+            } else if (btnIndex > btnTag.length) {
+                return;
             } else {
                 itemTag.forEach(item => {
                     setDisplayBlock(item);
@@ -34,16 +49,20 @@ function resetFilter(itemArr) {
 /*
     Takes an item array and button data as parameters
     Builds a new array of the items attributes and filters
-    according to button clicked attribute.
+    according to button clicked attribute. Next,
+    A new filtered array is made and if the filtered array
+    matches the button clicked then display those items.
 */
 function filterValues(itemArr, btnData) {
     let attributeArray = [];
     let btnAttribute = btnData.getAttribute('data-filter');
 
+    // creates an array of attributes
     for (let index = 0; index <= itemArr.length - 1; index++) {
         attributeArray.push(itemArr[index].getAttribute('data-filter'));
     }
 
+    // creates new result filtered array according to pushed button
     const result = attributeArray.filter((value => {
         return value.trim().includes(btnAttribute);
     }))
@@ -70,3 +89,4 @@ function setDisplayNone(item) {
 
 // run on load
 applyFilter();
+sortOrder();
