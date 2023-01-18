@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CSCD 378 Blog Site</title>
+    <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
@@ -13,7 +13,7 @@
 
 <body>
     <nav class="navigation">
-        <h1>CSCD 378 Blog</h1>
+        <h1></h1>
         <a href="#" class="login-link">Log in</a>
     </nav>
 
@@ -27,62 +27,62 @@
         <aside class="categories">
             <div class="button-div">
                 <p class="button-p">Blog Categories</p>
-                <button data-filter data-reset="true" class="btn">Reset filter</button>
-                <button data-filter data-reset="true" class="btn">Show A</button>
-                <button data-filter data-reset="true" class="btn">Show B</button>
-                <button data-filter data-reset="true" class="btn">Show C</button>
+                <button data-filter="all" class="btn">All</button>
+                <button data-filter="category-a" class="btn">Show A</button>
+                <button data-filter="category-b" class="btn">Show B</button>
+                <button data-filter="category-c" class="btn">Show C</button>
+                <button class="sort"><span></span></button>
             </div>
         </aside>
 
         <section class="blog-grid">
-            <div class="item">
-                <img loading="lazy" src="assets/img/300.png" alt="placeholder image">
+            <div data-filter="category-a" class="item">
+                <img loading="lazy" src="assets/img/1.jpg" alt="placeholder image">
                 <div class="blog-title">
                     <h2>Title</h2>
-                    <p>finance</p>
+                    <p>Category A</p>
                 </div>
                 <p class="blog-p">
                     first blog description
                 </p>
             </div>
-            <div class="item">
-                <img loading="lazy" src="assets/img/300.png" alt="placeholder image">
+
+            <div data-filter="category-b" class="item">
+                <img loading="lazy" src="assets/img/2.jpg" alt="placeholder image">
                 <div class="blog-title">
-                    <h2>Breakfast Wrap</h2>
-                    <p>Tech</p>
+                    <h2>Title</h2>
+                    <p>Category B</p>
                 </div>
                 <p class="blog-p">
-                    second blog description
+                    Second blog description
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates, facilis quas rem
-                    officiis sapiente fugit! Cumque adipisci quam optio repellendus neque voluptatum, nam ut
-                    consequuntur blanditiis possimus quae veniam?
                 </p>
             </div>
-            <div class="item">
-                <img loading="lazy" src="assets/img/300.png" alt="placeholder image">
+
+            <div data-filter="category-c" class="category-c item">
+                <img loading="lazy" src="assets/img/3.jpg" alt="placeholder image">
                 <div class="blog-title">
-                    <h2>Breakfast Wrap</h2>
-                    <p>lifestyle</p>
+                    <h2>Title</h2>
+                    <p>Category C</p>
                 </div>
                 <p class="blog-p">
                     third blog description
                 </p>
             </div>
-            <div class="item">
-                <img loading="lazy" src="assets/img/300.png" alt="placeholder image">
+
+            <div data-filter="category-a" class="item">
+                <img loading="lazy" src="assets/img/4.jpg" alt="placeholder image">
                 <div class="blog-title">
-                    <h2>Breakfast Wrap</h2>
-                    <p>finance</p>
+                    <h2>Title</h2>
+                    <p>Category A</p>
                 </div>
                 <p class="blog-p">
                     fourth blog description
                 </p>
             </div>
-
         </section>
     </main>
 
-    <script src="js/lazyload.js"></script>
     <script src="js/app.js"></script>
 </body>
 
