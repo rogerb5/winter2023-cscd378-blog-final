@@ -1,2 +1,42 @@
-Alexander's Site research:
+Amy Site Research:
+URL: https://quiltsmadewithlove.com/
+Libraries:
+-Font Awesome
+-Jquery
+-Widgets UI Library
+
+Features:
+-Contact info
+-Social media links
+-Custom logo (links to home)
+-Custom background image
+-Icon to jump to top of page
+-links:
+    -About page
+    -Design Library
+    -Finished Quilts
+    -Services
+
+URL: https://theteacupoflife.com/
+Libraries:
+-form.js
+-FitVids
+
+Features:
+-mailing list subscription modal
+-Custom header (clicking it links back to home page)
+-Navigation bar
+    -Dropdowns link to different pages/sections of the site
+-Social media links:
+    -Youtube
+    -facebook
+    -twitter
+    -instagram
+    -pinterest
+    -bloglovin
+-Search box
+-Home page shows recent posts
+-Navigation tabs to brows older posts
+-Option to comment on post-Copyright information
+-Custom footer
 
