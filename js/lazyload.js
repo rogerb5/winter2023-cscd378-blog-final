@@ -1,1 +1,1 @@
-console.log('todo implement lazyload');
+console.log('implement lazyload')

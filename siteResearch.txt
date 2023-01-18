@@ -39,3 +39,4 @@ Features:
 -Navigation tabs to brows older posts
 -Option to comment on post-Copyright information
 -Custom footer
+
