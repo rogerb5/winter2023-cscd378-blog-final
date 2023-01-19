@@ -1,2 +1,30 @@
+<<<<<<< Updated upstream
 Alexander's Site research:
 
+=======
+Ian's Site research:
+
+URL: https://www.technology-solved.com/blog/
+
+Libraries:
+Google Tag Manager
+
+Features: 
+Contact info 
+Links to social medias
+Logo that links to Home page
+Category button that links to other blogs
+Footer containing email input for newsletter
+
+URL: https://iamafoodblog.com
+
+Libraries:
+Typekit
+
+Features:
+Linked tags for each blog
+Images as page links
+Ratings for each recipe/blog
+Dark/Light mode switcher in Header
+Search bar for recipes
+>>>>>>> Stashed changes
