@@ -12,7 +12,7 @@
 
 /* CSS VARIABLES */
 :root {
-    --blog-primary-color: #E0E8F9;
+    --blog-primary-color: #D9D9D9;
     --blog-secondary-color: whitesmoke;
     --blog-third-color: navy;
     --blog-primary-text-color: #000000;
@@ -22,7 +22,7 @@
     --blog-section-padding: 1em;
 }
 
-/* General Settings */
+/* General Settings *********************/
 button {
     border: none;
     margin: 0;
@@ -33,17 +33,13 @@ a {
     color: #000000;
 }
 
-
-/* Render CSS */
 body {
     font-family: system-ui, serif;
     font-size: 32px;
-    line-height: 1.5;
-    background-color: #f9f0de;
     color: #1f2839;
 }
 
-/* Header Styling **********************/
+/* Header Styling ***********************************/
 header {
     background-color: var(--blog-primary-color);
     padding: var(--blog-primary-padding);
