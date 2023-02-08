@@ -14,7 +14,7 @@
 :root {
     --blog-primary-color: #D9D9D9;
     --blog-secondary-color: whitesmoke;
-    --blog-third-color: navy;
+    --blog-third-color: #333;
     --blog-primary-text-color: #000000;
     --blog-secondary-text-color: #fff;
     --blog-primary-padding: 2em;
@@ -34,6 +34,10 @@ a {
     color: #000000;
 }
 
+ul {
+    list-style-type: none;
+}
+
 body {
     font-family: system-ui, serif;
     font-size: 32px;
@@ -47,13 +51,17 @@ header {
     height: 40vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 /* SVG Settings ***/
 img.logo {
     width: 150px;
     height: 150px;
+}
+
+img.logo:hover {
+    cursor: pointer;
 }
 
 img.svg-n {
@@ -66,12 +74,8 @@ img.svg-n:hover {
     cursor: pointer;
 }
 
-div.info-div {
-    width: 60%;
-}
-
 p.p-header {
-    text-align: center;
+    text-align: right;
     font-weight: bold;
 }
 
@@ -185,6 +189,55 @@ p.blog-p {
     font-size: 18px;
     font-weight: 400;
     color: var(--blog-third-color);
+}
+
+/* LOGIN.html page styles ************************/
+section.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+form.admin-form {
+    border: 2px solid red;
+    padding: 1rem;
+    min-height: 400px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+    border: 0.5px solid black;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+input[type="text"] {
+    border: none;
+    background-color: var(--blog-primary-color);
+    padding: 0.4rem 0 0.4rem 0;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 0.4rem;
+}
+
+input[type="submit"] {
+    background-color: #3E68B1;
+    color: whitesmoke;
+    border: none;
+    margin: 0;
+    padding: 0.4rem 2rem 0.4rem 2rem;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
 }
 
 /* Add MOBILE SCREEN MEDIA QUERIES */
