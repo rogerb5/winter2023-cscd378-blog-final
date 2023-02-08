@@ -20,6 +20,7 @@
     --blog-primary-padding: 2em;
     --blog-primary-margin: 2rem;
     --blog-section-padding: 1em;
+    /* Dark mode variables go here */
 }
 
 /* General Settings *********************/
@@ -90,7 +91,7 @@ main aside {
     width: 25%;
 }
 
-/* Button Aside Div */
+/* MAIN Aside Div *************************/
 main aside div {
     display: flex;
     flex-direction: column;
@@ -125,15 +126,14 @@ button.sort:hover {
     cursor: pointer;
 }
 
-/* Section Blog Grid Styling ********/
+/* Section Blog Grid Styling *****************************/
 section.blog-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     width: 60%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 300ms ease;
-    margin: 1rem;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 section.blog-grid.sort {
@@ -148,10 +148,13 @@ span.change:after {
     content: 'Oldest to newest';
 }
 
+/********** Post Card styling ******/
 div.item {
-    width: 360px;
-    margin: 0.333rem;
     transition: transform 400ms ease;
+}
+
+div.item:hover {
+    cursor: pointer;
 }
 
 div.item img {
@@ -174,7 +177,6 @@ div.blog-title p {
 }
 
 div.blog-title p {
-    background-color: var(--blog-primary-color);
     padding: 0.33rem;
 }
 
