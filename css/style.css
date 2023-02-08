@@ -240,6 +240,27 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
+
+/************ Footer styling ***************/
+footer {
+    background-color: #3E68B1;
+    min-height: 160px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer a.f-link {
+    font-size: 1.33rem;
+    color: white;
+    font-weight: bolder;
+    margin: 0.7rem;
+}
+
+.newsletter {
+    color: white;
+}
+
 /* Add MOBILE SCREEN MEDIA QUERIES */
 @media (max-width: 600px) {
     main {
