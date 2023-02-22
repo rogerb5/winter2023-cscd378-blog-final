@@ -1,0 +1,6 @@
+1) Install laragon
+2) Download phpMyAdmin
+3) extract phpMyAdmin to laragon/etc/apps
+4) open database
+5) create database "teaspot"
+6) import teaspot.db
