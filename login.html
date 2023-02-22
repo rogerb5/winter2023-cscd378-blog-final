@@ -26,18 +26,18 @@
     </header>
 
     <section class="form-section">
-        <form action="" class="admin-form" method="post">
+        <form action="retrieve.php" class="admin-form" method="POST">
             <ul>
-                <label for="name">Username:</label>
+                <label for="username">Username:</label>
                 <li>
-                    <input type="text" id="name" name="user_name" />
+                    <input type="text" id="username" name="username" required />
                 </li>
             </ul>
 
             <ul>
-                <label for="mail">Password:</label>
+                <label for="password">Password:</label>
                 <li>
-                    <input type="text" id="password" name="user_email" />
+                    <input type="text" id="password" name="password" required />
                 </li>
             </ul>
             <input type="submit" value="Login">
