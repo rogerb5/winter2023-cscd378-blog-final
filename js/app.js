@@ -4,6 +4,12 @@ const itemTag = Array.from(document.querySelectorAll("div.item"));
 const sectionGrid = document.querySelector('section.blog-grid');
 const sortBtn = document.querySelector("button.sort");
 const spanTag = document.querySelector("span");
+const hamburgerMenu = document.querySelector('.hamburger');
+const asideMenu = document.querySelector("main aside");
+
+hamburgerMenu.addEventListener('click', () => {
+    asideMenu.classList.toggle('active');
+})
 
 /* 
     Sorts the order of blog posts according

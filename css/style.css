@@ -90,10 +90,18 @@ main {
 }
 
 main aside {
-    height: 100%;
-    position: sticky;
-    top: 0;
-    width: 25%;
+    position: fixed;
+    top: 30%;
+    right: 0%;
+    padding: 1.333rem;
+    transition: transform 300ms ease;
+    transform: translate(0px);
+    background-color: white;
+    box-shadow: 0px 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+main aside.active {
+    transform: translate(100%);
 }
 
 /* MAIN Aside Div *************************/
@@ -102,8 +110,8 @@ main aside div {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    height: 500px;
-    /* padding: var(--blog-primary-padding); */
+    padding: 1.333rem;
+    background-color: white;
 }
 
 main aside div p.button-p {
@@ -123,12 +131,18 @@ button.sort {
     border-radius: 5px;
     font-weight: bold;
     padding: 0.4rem 1rem 0.4rem 1rem;
+    margin: 0.4rem;
 }
 
 button.btn:hover,
 button.sort:hover {
     background-color: var(--blog-primary-color);
     cursor: pointer;
+}
+
+button.close {
+    background-color: rgb(221, 122, 122);
+    text-align: center;
 }
 
 /* Section Blog Grid Styling *****************************/
@@ -192,11 +206,6 @@ p.blog-p {
     font-size: 18px;
     font-weight: 400;
     color: var(--blog-third-color);
-}
-
-/* Custom Heights */
-.cosy {
-    height: 300px;
 }
 
 /* LOGIN.html page styles ************************/
