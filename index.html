@@ -16,7 +16,7 @@
             <img src="assets/svg/logo.svg" class="logo" alt="Teaspot logo">
         </a>
         <div class="info-div">
-            <p class="p-header">The place to spill the tea</p>
+            <h1 class="p-header">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
             <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo">
@@ -28,62 +28,112 @@
     </header>
 
     <main class="index-main">
-        <aside class="categories">
+        <aside class="categories" role="A menu to filter out blog categories">
             <div class="button-div">
-                <p class="button-p">Blog Categories</p>
+                <h5 class="aside-h5">Blog Categories</h5>
                 <button data-filter="all" class="btn">All</button>
-                <button data-filter="category-a" class="btn">Show A</button>
-                <button data-filter="category-b" class="btn">Show B</button>
-                <button data-filter="category-c" class="btn">Show C</button>
+                <button data-filter="category-a" class="btn">Tutorial</button>
+                <button data-filter="category-b" class="btn">Lifestyle</button>
+                <button data-filter="category-c" class="btn">Decorations</button>
                 <button class="sort"><span></span></button>
             </div>
+            <article class="a-close">
+                <p>=</p>
+            </article>
         </aside>
 
         <section class="blog-grid">
-            <div data-filter="category-a" class="item">
-                <img loading="lazy" src="assets/img/1.jpg" alt="placeholder image">
+            <article data-filter="category-a" class="item">
+                <figure>
+                    <img loading="lazy" src="assets/img/1.jpg" alt="Tea and macaroons">
+                </figure>
                 <div class="blog-title">
-                    <h2>Title</h2>
-                    <p>Category A</p>
+                    <h2>Baking with Tea</h2>
+                    <p>Tutorial</p>
                 </div>
-                <p class="blog-p">
-                    first blog description
-                </p>
-            </div>
+                <blockquote class="blog-p">
+                    Baking with tea can be a fun and unique way to add flavor to your baked goods. Matcha and Earl Grey
+                    are two of the most popular teas to use in baking, and they can add a distinct and delicious flavor
+                    to your recipes. In this blog post, we'll explore the world of baking with tea, and we'll provide
+                    you with some delicious recipes for Matcha and Earl Grey baked goods.
+                </blockquote>
+            </article>
 
-            <div data-filter="category-b" class="item">
-                <img loading="lazy" src="assets/img/2.jpg" alt="placeholder image">
+            <article data-filter="category-a" class="item">
+                <figure>
+                    <img loading="lazy" src="assets/img/2.jpg" alt="Cinammon Tea and fruit">
+                </figure>
                 <div class="blog-title">
-                    <h2>Title</h2>
-                    <p>Category B</p>
+                    <h2>Make English Tea</h2>
+                    <p>Tutorial</p>
                 </div>
-                <p class="blog-p">
-                    Second blog description
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates, facilis quas rem
-                </p>
-            </div>
+                <blockquote class="blog-p">
+                    Making a proper cup of tea English style is a time-honored tradition that has been passed down
+                    through generations. It may seem simple, but there are a few key steps to follow to ensure a
+                    delicious cup of tea every time.
+                </blockquote>
+            </article>
 
-            <div data-filter="category-c" class="category-c item">
-                <img loading="lazy" src="assets/img/3.jpg" alt="placeholder image">
+            <article data-filter="category-c" class="category-c item cosy">
+                <figure>
+                    <img src="assets/img/3.jpg" alt="Rooster Yarn Piece Covered Teapot" loading="lazy" />
+                </figure>
                 <div class="blog-title">
-                    <h2>Title</h2>
-                    <p>Category C</p>
+                    <h2>Tea Cosy!</h2>
+                    <p>Decorations</p>
                 </div>
-                <p class="blog-p">
-                    third blog description
-                </p>
-            </div>
+                <blockquote class="blog-p">
+                    A tea cosy is a simple yet important piece of kit for any tea lover. Its main purpose is to keep
+                    your tea warm, but it can also add to the aesthetics of your tea-drinking experience and make a
+                    statement about your style and taste
+                </blockquote>
+            </article>
 
-            <div data-filter="category-a" class="item">
-                <img loading="lazy" src="assets/img/4.jpg" alt="placeholder image">
+            <article data-filter="category-a" class="item">
+                <figure>
+                    <img src="assets/img/4.jpg" alt="Squirrels drinking tea" loading="lazy" />
+                </figure>
                 <div class="blog-title">
-                    <h2>Title</h2>
-                    <p>Category A</p>
+                    <h2>Hosting a Tea Party</h2>
+                    <p>Tutorial</p>
                 </div>
-                <p class="blog-p">
-                    fourth blog description
-                </p>
-            </div>
+                <blockquote class="blog-p">
+                    Hosting a tea party is a great way to bring friends and family together for a relaxed and elegant
+                    gathering. To complete the experience, it is important to choose the right snacks to serve. Here are
+                    some suggestions for delicious and sophisticated tea party snacks that are sure to impress your
+                    guests.
+                </blockquote>
+            </article>
+
+            <article data-filter="category-b" class="item hi">
+                <figure>
+                    <img src="assets/img/5.jpg" alt="Tea with Matcha" loading="lazy" />
+                </figure>
+                <div class="blog-title">
+                    <h2>Tea as routine</h2>
+                    <p>Lifestyle</p>
+                </div>
+                <blockquote class="blog-p">
+                    Matcha: Matcha is a fine powder made from green tea leaves, and it has a unique flavor that is both
+                    grassy and slightly sweet. Matcha is a popular ingredient in Japanese tea ceremonies, but it has
+                    also found its way into the world of baking. When used in baking, matcha can add a vibrant green
+                    color and a delicate, earthy flavor to your recipes. Here are some of our favorite Matcha recipes:
+                </blockquote>
+            </article>
+
+            <article data-filter="category-b" class="item hi">
+                <img src="assets/img/7.jpg" alt="Tea with Matcha" loading="lazy" />
+                <div class="blog-title">
+                    <h2>HTTP</h2>
+                    <p>Lifestyle</p>
+                </div>
+                <blockquote class="blog-p">
+                    The HTTP 418 error, also known as the "I'm a teapot" error, is a quirky and entertaining part of the
+                    world of web development. But did you know that this error code has roots in the tradition of
+                    drinking tea and using teapots? In this blog post, we'll explore the connection between tea,
+                    teapots, and the HTTP 418 error.
+                </blockquote>
+            </article>
         </section>
     </main>
 
@@ -94,7 +144,7 @@
             <a href="login.html" class="f-link">Login</a>
         </section>
         <form>
-            <label for="newsletter" class="newsletter">Sign up for our newsletter:</label>
+            <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" id="newsletter" name="" />
         </form>
     </footer>
