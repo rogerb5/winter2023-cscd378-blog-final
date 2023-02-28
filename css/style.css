@@ -41,12 +41,6 @@ ul {
     list-style-type: none;
 }
 
-body {
-    font-family: system-ui, serif;
-    font-size: 32px;
-    color: #1f2839;
-}
-
 /* Header Styling ***********************************/
 header {
     background-color: var(--blog-primary-color);
@@ -79,7 +73,7 @@ img.svg-n:hover {
     cursor: pointer;
 }
 
-p.p-header {
+h1.p-header {
     text-align: right;
     font-weight: bold;
 }
@@ -118,13 +112,20 @@ main aside article {
     height: 50px;
     width: 50px;
     text-align: center;
-    color: white;
+    color: var(--blog-secondary-text-color);
     background-color: royalblue;
+    font-size: 1.3rem;
     transition: background-color 300ms ease-in-out;
+    z-index: 4;
 }
 
 main aside article:hover {
     background-color: rgb(52, 86, 157);
+}
+
+h5.aside-h5 {
+    font-size: 1.333rem;
+    z-index: 4;
 }
 
 /* MAIN Aside Div *************************/
@@ -145,7 +146,7 @@ main aside div p.button-p {
 
 button.btn,
 button.sort {
-    background-color: whitesmoke;
+    background-color: var(--blog-secondary-color);
     color: #1f2839;
     font-size: 18px;
     transition: background-color 300ms ease-in-out;
@@ -160,23 +161,6 @@ button.sort {
 button.btn:hover,
 button.sort:hover {
     background-color: var(--blog-primary-color);
-    cursor: pointer;
-}
-
-/* Close button Styling */
-a.close {
-    background-color: rgb(227, 169, 169);
-    text-align: center;
-    margin: 0.4rem;
-    font-size: 16px;
-    padding: 0.2rem 1rem 0.2rem 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    width: 70%;
-    color: #1f2839;
-}
-
-a.close:hover {
     cursor: pointer;
 }
 
@@ -207,7 +191,7 @@ article.item {
     transition: transform 400ms ease;
     box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
     padding: 1rem;
-    background-color: white;
+    background-color: var(--blog-secondary-text-color);
 }
 
 article.item:hover {
@@ -215,9 +199,11 @@ article.item:hover {
 }
 
 article.item img {
+    background-size: cover;
+    background-position: 50% 50%;
+    transform-origin: 50% 100%;
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    position: relative;
 }
 
 div.blog-title {
@@ -273,7 +259,7 @@ label {
 
 input[type="text"] {
     border: none;
-    background-color: whitesmoke;
+    background-color: var(--blog-secondary-color);
     padding: 0.4rem 0 0.4rem 0;
     border-radius: 3px;
     font-size: 18px;
@@ -282,7 +268,7 @@ input[type="text"] {
 
 input[type="submit"] {
     background-color: #3E68B1;
-    color: whitesmoke;
+    color: var(--blog-secondary-color);
     border: none;
     margin: 0;
     padding: 0.4rem 2rem 0.4rem 2rem;
@@ -292,7 +278,6 @@ input[type="submit"] {
 input[type="submit"]:hover {
     cursor: pointer;
 }
-
 
 /************ Footer styling ***************/
 footer {
@@ -305,39 +290,10 @@ footer {
 
 footer a.f-link {
     font-size: 1.33rem;
-    color: black;
+    color: var(--blog-primary-text-color);
     font-weight: bolder;
     margin: 0.7rem;
 }
 
 /* Add MOBILE SCREEN MEDIA QUERIES */
-@media (max-width: 600px) {
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    main aside {
-        background-color: transparent;
-        position: sticky;
-        top: 0px;
-        left: 0;
-        height: 140px;
-        display: flex;
-        width: 100%;
-        z-index: 2;
-    }
-
-    section.blog-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-
-    main aside div {
-        flex-direction: row;
-    }
-
-}
+@media (max-width: 600px) {}
