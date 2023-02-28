@@ -6,8 +6,15 @@ const sortBtn = document.querySelector("button.sort");
 const spanTag = document.querySelector("span");
 const hamburgerMenu = document.querySelector('.hamburger');
 const asideMenu = document.querySelector("main aside");
+const asideCloseBtn = document.querySelector("article.a-close");
 
+// toggle asidemenu on hamburger menu click
 hamburgerMenu.addEventListener('click', () => {
+    asideMenu.classList.toggle('active');
+})
+
+// toggle asidemenu on aside hamburger menu click
+asideCloseBtn.addEventListener("click", () => {
     asideMenu.classList.toggle('active');
 })
 

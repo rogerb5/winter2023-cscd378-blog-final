@@ -95,13 +95,33 @@ main aside {
     right: 0%;
     padding: 1.333rem;
     transition: transform 300ms ease;
-    transform: translate(0px);
-    background-color: white;
-    box-shadow: 0px 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+    transform: translate(90%);
+    background-color: var(--blog-secondary-text-color);
+    box-shadow: 0px 4px 20px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+main aside:hover {
+    cursor: pointer;
 }
 
 main aside.active {
-    transform: translate(100%);
+    transform: translate(0%);
+}
+
+main aside article {
+    position: absolute;
+    top: 40%;
+    left: -10%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    color: white;
+    background-color: royalblue;
+    transition: background-color 300ms ease-in-out;
+}
+
+main aside article:hover {
+    background-color: rgb(52, 86, 157);
 }
 
 /* MAIN Aside Div *************************/
@@ -111,7 +131,7 @@ main aside div {
     justify-content: space-around;
     align-items: flex-start;
     padding: 1.333rem;
-    background-color: white;
+    background-color: var(--blog-secondary-text-color);
 }
 
 main aside div p.button-p {
@@ -140,9 +160,21 @@ button.sort:hover {
     cursor: pointer;
 }
 
-button.close {
-    background-color: rgb(221, 122, 122);
+/* Close button Styling */
+a.close {
+    background-color: rgb(227, 169, 169);
     text-align: center;
+    margin: 0.4rem;
+    font-size: 16px;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 70%;
+    color: #1f2839;
+}
+
+a.close:hover {
+    cursor: pointer;
 }
 
 /* Section Blog Grid Styling *****************************/
@@ -259,7 +291,7 @@ footer {
     background-color: var(--blog-primary-color);
     min-height: 160px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -268,10 +300,6 @@ footer a.f-link {
     color: black;
     font-weight: bolder;
     margin: 0.7rem;
-}
-
-.newsletter {
-    color: b, acm;
 }
 
 /* Add MOBILE SCREEN MEDIA QUERIES */
