@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -8,6 +10,7 @@
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    font-family: 'Merriweather', serif;
 }
 
 /* CSS VARIABLES */
@@ -135,7 +138,7 @@ main aside div {
 }
 
 main aside div p.button-p {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bolder;
     color: #1f2839;
 }
@@ -144,7 +147,7 @@ button.btn,
 button.sort {
     background-color: whitesmoke;
     color: #1f2839;
-    font-size: 16px;
+    font-size: 18px;
     transition: background-color 300ms ease-in-out;
     width: 70%;
     text-align: left;
@@ -181,11 +184,10 @@ a.close:hover {
 section.blog-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
     width: 60%;
     padding: 1rem;
-    gap: 1rem;
-    margin: 2rem;
+    gap: 2rem;
 }
 
 section.blog-grid.sort {
