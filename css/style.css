@@ -203,18 +203,18 @@ span.change:after {
 }
 
 /********** Post Card styling ********/
-div.item {
+article.item {
     transition: transform 400ms ease;
     box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
     padding: 1rem;
     background-color: white;
 }
 
-div.item:hover {
+article.item:hover {
     cursor: pointer;
 }
 
-div.item img {
+article.item img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -235,11 +235,11 @@ div.blog-title p {
     color: var(--blog-third-color);
 }
 
-div.blog-title p {
+article.blog-title p {
     padding: 0.33rem;
 }
 
-p.blog-p {
+blockquote.blog-p {
     color: var(--blog-primary-text-color);
     font-size: 18px;
     font-weight: 400;
