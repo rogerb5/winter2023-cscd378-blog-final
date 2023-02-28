@@ -1,6 +1,6 @@
 "use strict";
 const btnTag = Array.from(document.querySelectorAll("button.btn"));
-const itemTag = Array.from(document.querySelectorAll("div.item"));
+const itemTag = Array.from(document.querySelectorAll("article.item"));
 const sectionGrid = document.querySelector('section.blog-grid');
 const sortBtn = document.querySelector("button.sort");
 const spanTag = document.querySelector("span");
