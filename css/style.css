@@ -92,9 +92,9 @@ main aside {
     right: 0%;
     padding: 1.333rem;
     transition: transform 400ms cubic-bezier(0.65, 0.05, 0.36, 1);
-    transform: translate(90%);
+    transform: translate3d(90%, 0, 0);
     background-color: var(--blog-secondary-text-color);
-    box-shadow: 0px 4px 20px 0 hsla(0, 0%, 0%, 0.2);
+    box-shadow: 0px 4px 10px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 main aside:hover {
@@ -102,15 +102,15 @@ main aside:hover {
 }
 
 main aside.active {
-    transform: translate(0%);
+    transform: translate3d(0%, 0, 0);
 }
 
 main aside article {
     position: absolute;
     top: 40%;
     left: -10%;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     text-align: center;
     color: var(--blog-secondary-text-color);
     background-color: royalblue;
@@ -203,7 +203,6 @@ article.item img {
     background-position: 50% 50%;
     transform-origin: 50% 100%;
     width: 100%;
-    position: relative;
 }
 
 div.blog-title {
@@ -293,6 +292,107 @@ footer a.f-link {
     color: var(--blog-primary-text-color);
     font-weight: bolder;
     margin: 0.7rem;
+}
+
+/************* Modal Styling **************/
+nav.modal-nav {
+    width: 50%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a.exit-modal {
+    padding: 0.2rem 1.3rem 0.2rem 1.3rem;
+    border-radius: 3px;
+    background-color: rgb(241, 184, 184);
+}
+
+a.exit-modal:hover {
+    cursor: pointer;
+}
+
+section.modal {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: white;
+    width: 100%;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+section.modal.active {
+    transform: translate3d(0%, 0, 0);
+    z-index: 3;
+}
+
+section.modal h1 {
+    text-align: center;
+    font-size: 1.77rem;
+}
+
+section.modal article.blog-article {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+    width: 60%;
+    overflow-y: scroll;
+}
+
+article.blog-article img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;
+    will-change: transform;
+}
+
+/* Modal Image container */
+article figure.article-figure {
+    position: relative;
+    height: 400px;
+}
+
+article figure.article-figure img:first-child {
+    z-index: 1;
+}
+
+/* Button Modal Section */
+section.btn-section {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+button.btn-m {
+    padding: 0.2rem 1.3rem 0.2rem 1.3rem;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0.9rem;
+    border-radius: 3px;
+}
+
+button.btn-m:hover {
+    cursor: pointer;
+}
+
+p.article-p {
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 /* Add MOBILE SCREEN MEDIA QUERIES */
