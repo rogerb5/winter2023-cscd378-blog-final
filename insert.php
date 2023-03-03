@@ -2,6 +2,7 @@
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
+$type = "register";
 
 if(!empty($username) || !empty($password || !empty($email))){
     $host = "localhost";
@@ -30,6 +31,12 @@ if(!empty($username) || !empty($password || !empty($email))){
             $stmt = $conn->prepare($INSERT);
             $stmt->bind_param("sss",$username, $password, $email);
             $stmt->execute();
+
+            $INSERT = "INSERT into logger (username, password, type) values(?,?,?)";
+            $stmt   =  $conn->prepare($INSERT);
+            $stmt   -> bind_param("sss", $username, $password, $type);
+            $stmt   -> execute();
+
             header("Location: login.html");
 
         }else{

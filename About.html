@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +33,27 @@
     </div>
 
     </section>
+    <section class="form-section">
+        <form action="comins.php" class="admin-form" method="POST">
+            <ul>
+                <label for="user">Username:</label>
+                <li>
+                    <input type="text" id="user" name="user" required />
+                </li>
+            </ul>
+            <ul>
+                <label for="message">Message:</label>
+                <li>
+                    <input type="text" id="message" name="message" required />
+                </li>
+            </ul>
+            <input type="submit" value="Post" name = "post_comment">
+        </form>
+    </section>
+
+    <section class="form-section">
+        <?php include 'comments.php"; ?>
+    </section>
 
     <footer>
         <section class="f-links">
@@ -40,6 +61,7 @@
             <a href="#" class="f-link">About</a>
             <a href="login.html" class="f-link">Login</a>
         </section>
+
         <form>
             <label for="newsletter" class="newsletter">Sign up for our newsletter:</label>
             <input type="text" id="newsletter" name="" />
