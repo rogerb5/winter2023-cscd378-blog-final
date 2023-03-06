@@ -8,6 +8,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -38,17 +42,17 @@
 
     <header class="index-header">
         <a href="index.html">
-            <img src="assets/svg/logo.svg" class="logo" alt="Teaspot logo">
+            <img src="assets/svg/logo.svg" class="logo" alt="The Teaspot logo" title="The Teaspot logo">
         </a>
         <div class="info-div">
-            <h1 class="p-header">The place to spill the tea</h1>
+            <h1 class="p-header" title="The place to spill the tea">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
-            <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo">
+            <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo" title="Dark Mode Logo">
             <a href="login.html">
-                <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon">
+                <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
             </a>
-            <img src="assets/svg/ham.svg" class="svg-n hamburger" alt="hamburger menu logo">
+            <img src="assets/svg/ham.svg" class="svg-n hamburger" alt="hamburger menu logo" title="Filter Menu Logo">
         </nav>
     </header>
 
@@ -63,13 +67,13 @@
                 <button class="sort"><span></span></button>
             </div>
             <article class="a-close">
-                <p>=</p>
+                <p title="Filter Menu Logo">=</p>
             </article>
         </aside>
 
         <section class="blog-grid">
             <article data-filter="category-a" class="item">
-                <figure>
+                <figure title="Tea and macaroons">
                     <img loading="lazy" src="assets/img/1.jpg" alt="Tea and macaroons">
                 </figure>
                 <div class="blog-title">
@@ -89,7 +93,7 @@
             </article>
 
             <article data-filter="category-a" class="item">
-                <figure>
+                <figure title="Cinammon Tea and fruit">
                     <img loading="lazy" src="assets/img/2.jpg" alt="Cinammon Tea and fruit">
                 </figure>
                 <div class="blog-title">
@@ -105,7 +109,7 @@
             </article>
 
             <article data-filter="category-c" class="category-c item cosy">
-                <figure>
+                <figure title="Rooster Yarn Piece Covered Teapot">
                     <img src="assets/img/3.jpg" alt="Rooster Yarn Piece Covered Teapot" loading="lazy" />
                 </figure>
                 <div class="blog-title">
@@ -121,7 +125,7 @@
             </article>
 
             <article data-filter="category-a" class="item">
-                <figure>
+                <figure title="Squirrels drinking tea">
                     <img src="assets/img/4.jpg" alt="Squirrels drinking tea" loading="lazy" />
                 </figure>
                 <div class="blog-title">
@@ -138,7 +142,7 @@
             </article>
 
             <article data-filter="category-b" class="item hi">
-                <figure>
+                <figure title="Tea with Matcha">
                     <img src="assets/img/5.jpg" alt="Tea with Matcha" loading="lazy" />
                 </figure>
                 <div class="blog-title">
@@ -155,7 +159,9 @@
             </article>
 
             <article data-filter="category-b" class="item hi">
-                <img src="assets/img/7.jpg" alt="Tea with Matcha" loading="lazy" />
+                <figure title="HTTP code image">
+                    <img src="assets/img/7.jpg" alt="HTTP code image" loading="" />
+                </figure>
                 <div class="blog-title">
                     <h2>HTTP</h2>
                     <p>Lifestyle</p>
@@ -183,6 +189,7 @@
         </form>
     </footer>
     <script src="js/app.js"></script>
+    <script src="js/jquery.js"></script>
     <!-- <script src="js/modal.js"></script> -->
 </body>
 

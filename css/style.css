@@ -185,6 +185,10 @@ article.item img {
     width: 100%;
 }
 
+article.item:hover {
+    cursor: pointer;
+}
+
 div.blog-title {
     display: flex;
     margin-top: 0.8rem;
