@@ -130,15 +130,7 @@ $_SESSION['page_id'] = 2;
                 </form>
             </section>
 
-            <section class="comment-section">
-                <h3>Comments:</h3>
-                <form action="" method="" class="form-comment">
-                    <div>
-                        <textarea name="comments" id="comments" style=""></textarea>
-                    </div>
-                    <input type="submit" value="Add">
-                </form>
-            </section>
+
 
         </section>
     </section>
