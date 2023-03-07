@@ -261,6 +261,17 @@ textarea {
     font-size: 1.1rem;
 }
 
+
+/*ABOUT.html**********************/
+section.about {
+    margin: 2rem auto;
+    width: 60%;
+}
+
+section.about p {
+    margin-top: 0.7rem;
+}
+
 /* LOGIN.html page styles ************************/
 section.form-section {
     display: flex;
