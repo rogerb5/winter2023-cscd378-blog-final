@@ -100,8 +100,6 @@ function setDisplayNone(item) {
     item.style.display = 'none';
 }
 
-
-
 // run on load
 applyFilter();
 sortOrder();

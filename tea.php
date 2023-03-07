@@ -27,7 +27,7 @@ $_SESSION['page_id'] = 6;
             <h1 class="p-header">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
-            <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo">
+            <!-- <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo"> -->
             <a href="login.html">
                 <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon">
             </a>
@@ -114,6 +114,16 @@ $_SESSION['page_id'] = 6;
                 </form>
             </section>
 
+            <section class="comment-section">
+                <h3>Comments:</h3>
+                <form action="" method="" class="form-comment">
+                    <div>
+                        <textarea name="comments" id="comments" style=""></textarea>
+                    </div>
+                    <input type="submit" value="Add">
+                </form>
+            </section>
+
         </section>
     </section>
     <footer>
@@ -125,6 +135,7 @@ $_SESSION['page_id'] = 6;
         <form>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" id="newsletter" name="" />
+            <button data-filter="" class="btn">Submit</button>
         </form>
     </footer>
     <!-- <script src="" async defer></script> -->

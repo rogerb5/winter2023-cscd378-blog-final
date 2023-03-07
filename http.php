@@ -27,7 +27,7 @@ $_SESSION['page_id'] = 1;
             <h1 class="p-header">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
-            <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo">
+            <!-- <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo"> -->
             <a href="login.html">
                 <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon">
             </a>
@@ -97,8 +97,6 @@ $_SESSION['page_id'] = 1;
 
 
             <!-- Section where comments will be added -->
-
-            <!-- Section where comments will be added -->
             <div class="comments-section">
                 <h2>Comments</h2>
                 <?php
@@ -121,8 +119,18 @@ $_SESSION['page_id'] = 1;
                         <div>
                             <textarea name="message" id="message" style=""></textarea>
 
+                        </div>
+                        <input type="submit" value="Add" name = "http_post_comment">
+                </form>
+            </section>
+
+            <section class="comment-section">
+                <h3>Comments:</h3>
+                <form action="" method="" class="form-comment">
+                    <div>
+                        <textarea name="comments" id="comments" style=""></textarea>
                     </div>
-                    <input type="submit" value="Add" name = "http_post_comment">
+                    <input type="submit" value="Add">
                 </form>
             </section>
 
@@ -131,12 +139,13 @@ $_SESSION['page_id'] = 1;
     <footer>
         <section class="f-links">
             <a href="index.html" class="f-link">Home</a>
-            <a href="#" class="f-link">About</a>
+            <a href="about.html" class="f-link">About</a>
             <a href="login.html" class="f-link">Login</a>
         </section>
         <form>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" id="newsletter" name="" />
+            <button data-filter="" class="btn">Submit</button>
         </form>
     </footer>
 

@@ -57,7 +57,6 @@ const nextBtn = document.querySelector('button.next');
 let imageIndex = 0;
 
 
-
 function clickCards() {
     cardTag.forEach((card, cardIndex) => {
         card.addEventListener("click", () => {

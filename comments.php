@@ -1,4 +1,11 @@
 <?php
+// start the session
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+// get the page ID from the session
+$page_id = $_SESSION['page_id'];
+
 // database connection details
 $servername = "localhost";
 $username = "root";
@@ -15,12 +22,12 @@ if ($conn->connect_error) {
 }
 
 // if the form is submitted to post a comment
-if (isset($_POST['post_comment'])) {
+if (isset($_POST['http_post_comment'])) {
     $user = $_POST['user'];
     $message = $_POST['message'];
 
     // insert the new comment into the database
-    $sql = "INSERT INTO commentDB (user, message) VALUES ('$user', '$message')";
+    $sql = "INSERT INTO commentdb (user, message,page_id) VALUES ('$user', '$message',$page_id)";
     if ($conn->query($sql) === TRUE) {
         echo "Comment posted successfully";
 
@@ -35,7 +42,7 @@ if (isset($_POST['post_comment'])) {
 }
 
 // retrieve comments from the database
-$sql = "SELECT * FROM commentDB";
+$sql = "SELECT * FROM commentdb WHERE page_id = $page_id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
