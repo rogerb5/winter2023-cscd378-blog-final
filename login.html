@@ -8,19 +8,23 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 
 <body>
     <header class="index-header">
         <a href="index.html">
-            <img src="assets/svg/logo.svg" class="logo" alt="Teaspot logo">
+            <img src="assets/svg/logo.svg" class="logo" alt="Teaspot logo" title="Teaspot Logo">
         </a>
         <div class="info-div">
             <h1 class="p-header">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
-            <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo">
-            <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon">
+            <!-- <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo"> -->
+            <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
         </nav>
     </header>
 
@@ -29,13 +33,16 @@
             <ul>
                 <label for="username">Username:</label>
                 <li>
+
                     <input type="text" id="username" name="username" required />
+
                 </li>
             </ul>
 
             <ul>
                 <label for="password">Password:</label>
                 <li>
+
                     <input type="text" id="password" name="password" required />
                 </li>
             </ul>
@@ -46,16 +53,19 @@
     <footer>
         <section class="f-links">
             <a href="index.html" class="f-link">Home</a>
-            <a href="#" class="f-link">About</a>
+            <a href="about.html" class="f-link">About</a>
             <a href="login.html" class="f-link">Login</a>
         </section>
         <form>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" id="newsletter" name="" />
+            <button data-filter="" class="btn">Submit</button>
         </form>
     </footer>
 
     <!-- <script src="" async defer></script> -->
+    <script src="js/cookie.js"></script>
+    <script src="js/jquery.js"></script>
 </body>
 
 </html>
