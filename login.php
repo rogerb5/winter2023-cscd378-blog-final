@@ -55,6 +55,26 @@ include "comments.php"
         </ul>
         <input type="submit" value="Login" name="login">
     </form>
+    <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if ($username === 'test' && $password === 'test') { 
+        setcookie('logged_in', true, time() + 1800); // Set the "logged_in" cookie to 1 and will expire in 30 mins
+        $message = 'Cookie Set';
+        echo $message;
+    } else {
+        $message = 'Incorrect username or password.';
+        echo $message;
+    }
+
+    if (isset($_COOKIE['logged_in'])) {
+        //checks if cookie value is 1 or non existant
+        //do the delete button thing when cookie value is 1
+    }
+}
+?>
 </section>
 
 <footer>
