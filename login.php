@@ -24,7 +24,6 @@ include "comments.php"
         <h1 class="p-header">The place to spill the tea</h1>
     </div>
     <nav class="icon-holders">
-        <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo">
         <a href = "login.php">
         <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon">
         </a>

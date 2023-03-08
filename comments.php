@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 // get the page ID from the session
-$page_id = $_SESSION['page_id'];
+
 
 // database connection details
 $servername = "localhost";
@@ -50,6 +50,7 @@ if (isset($_POST['login'])) {
 
     if ($result && $result->num_rows > 0) {
         // login successful
+        setcookie('logged_in', true, time() + 1800);
         echo "Login successful";
         // redirect to home page or another page
         header("Location: index.php");
@@ -62,6 +63,7 @@ if (isset($_POST['login'])) {
 
 // if the form is submitted to post a comment
 if (isset($_POST['http_post_comment'])) {
+    $page_id = $_SESSION['page_id'];
     $user = $_POST['user'];
     $message = $_POST['message'];
 
@@ -78,22 +80,23 @@ if (isset($_POST['http_post_comment'])) {
     } else {
         echo "Error posting comment: " . $conn->error;
     }
-}
+    // retrieve comments from the database
+    $sql = "SELECT * FROM commentdb WHERE page_id = $page_id";
+    $result = $conn->query($sql);
 
-// retrieve comments from the database
-$sql = "SELECT * FROM commentdb WHERE page_id = $page_id";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output each comment
-    while ($row = $result->fetch_assoc()) {
-        echo '<div class="comment">';
-        echo '<p><strong>' . $row['user'] . '</strong>: ' . $row['message'] . '</p>';
-        echo '</div>';
+    if ($result->num_rows > 0) {
+        // output each comment
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="comment">';
+            echo '<p><strong>' . $row['user'] . '</strong>: ' . $row['message'] . '</p>';
+            echo '</div>';
+        }
+    } else {
+        echo '<p>No comments yet</p>';
     }
-} else {
-    echo '<p>No comments yet</p>';
+
 }
+
 
 // close database connection
 $conn->close();
