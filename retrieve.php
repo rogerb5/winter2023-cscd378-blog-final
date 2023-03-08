@@ -1,4 +1,5 @@
 <?php
+$error = "";
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -23,16 +24,12 @@ if(!empty($username) || !empty($password)) {
 
         if($rnum == 1){
             $stmt->close();
-            header("Location: index.html");
-        }
-        else{
-            header("Location: login.html");
+            header("Location: index.php");
+        } else {
+            $error = "Username or password is incorrect";
         }
         $stmt->close();
         $conn->close();
-
     }
-}else{
-    header("Location: login.html");
 }
 ?>

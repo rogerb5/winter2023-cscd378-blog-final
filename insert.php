@@ -30,7 +30,7 @@ if(!empty($username) || !empty($password || !empty($email))){
             $stmt = $conn->prepare($INSERT);
             $stmt->bind_param("sss",$username, $password, $email);
             $stmt->execute();
-            header("Location: login.html");
+            header("Location: login.php");
 
         }else{
             echo "Someone already registered with this email";

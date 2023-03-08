@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 07, 2023 at 09:31 PM
+-- Generation Time: Mar 06, 2023 at 05:43 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -42,9 +42,7 @@ CREATE TABLE `commentdb` (
 INSERT INTO `commentdb` (`message`, `user`, `date`, `commentID`, `page_id`) VALUES
 ('Test', 'Alex', '2023-03-05 21:32:35', 41, 1),
 ('Test', 'Alex', '2023-03-05 21:35:35', 42, 1),
-('This is a test for page 2', 'Alex', '2023-03-05 21:35:50', 43, 2),
-('This is a test', 'Alexander', '2023-03-06 12:48:37', 44, 6),
-('Test\r\n', 'Alex', '2023-03-07 13:24:38', 45, 3);
+('This is a test for page 2', 'Alex', '2023-03-05 21:35:50', 43, 2);
 
 -- --------------------------------------------------------
 
@@ -59,14 +57,6 @@ CREATE TABLE `logger` (
   `logID` int NOT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `logger`
---
-
-INSERT INTO `logger` (`user`, `message`, `type`, `logID`, `date`) VALUES
-('Alexander', 'This is a test', 'comment post', 26, '2023-03-06 12:48:37'),
-('Alex', 'Test\r\n', 'comment post', 27, '2023-03-07 13:24:38');
 
 -- --------------------------------------------------------
 
@@ -135,13 +125,13 @@ ALTER TABLE `newsletter`
 -- AUTO_INCREMENT for table `commentdb`
 --
 ALTER TABLE `commentdb`
-  MODIFY `commentID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `commentID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `logger`
 --
 ALTER TABLE `logger`
-  MODIFY `logID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `logID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `logindb`
