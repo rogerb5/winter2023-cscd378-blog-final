@@ -20,7 +20,7 @@ $_SESSION['page_id'] = 3;
 
 <body>
 
-    <header class="index-header">
+<header class="index-header">
         <a href="index.php">
             <img src="assets/svg/logo.svg" class="logo" alt="Teaspot logo">
         </a>
@@ -94,7 +94,7 @@ $_SESSION['page_id'] = 3;
                 <?php
 
 
-                include 'comments.php';
+                include 'commentfunc.php';
 
                 ?>
             </div>
@@ -124,7 +124,12 @@ $_SESSION['page_id'] = 3;
             <a href="#" class="f-link">About</a>
             <a href="login.php" class="f-link">Login</a>
         </section>
-        <form>
+        <form action="" method="POST">
+            <?php if (!empty($success)) { ?>
+                <div class="success-message">
+                    <?php echo $success; ?>
+                </div>
+            <?php }?>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" id="newsletter" name="" />
         </form>

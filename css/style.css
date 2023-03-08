@@ -336,6 +336,47 @@ footer a.f-link {
     margin: 0.7rem;
     text-decoration: none;
 }
+/************* Delete Comment **************/
+.comment-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+}
+
+.name {
+    white-space: nowrap;
+}
+
+.message-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.message {
+    flex-shrink: 0;
+    max-width: 800px; /* adjust as needed */
+    overflow-wrap: break-word;
+    margin-right: 10px;
+}
+
+.delete-form {
+    display: flex;
+    align-items: flex-start;
+}
+
+.delete-button-trash {
+    background-color: transparent;
+    width: 20px;
+    height: 30px;
+}
+
+
+
 
 /************* Modal Styling **************/
 nav.modal-nav {

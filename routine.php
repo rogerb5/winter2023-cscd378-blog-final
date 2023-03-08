@@ -93,7 +93,7 @@ $_SESSION['page_id'] = 5;
                 <?php
 
 
-                include 'comments.php';
+                include 'commentfunc.php';
 
                 ?>
             </div>
@@ -123,7 +123,12 @@ $_SESSION['page_id'] = 5;
             <a href="#" class="f-link">About</a>
             <a href="login.php" class="f-link">Login</a>
         </section>
-        <form>
+        <form action="" method="POST">
+            <?php if (!empty($success)) { ?>
+                <div class="success-message">
+                    <?php echo $success; ?>
+                </div>
+            <?php }?>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" id="newsletter" name="" />
         </form>

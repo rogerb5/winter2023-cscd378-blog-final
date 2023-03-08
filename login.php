@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 // start the session
-include "comments.php"
+include "setconfig.php"
 
 ?>
 <html lang="en">
