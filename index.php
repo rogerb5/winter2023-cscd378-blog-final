@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <?php
-include "newsletter.php";
+include "comments.php";
 
 ?>
 <head>

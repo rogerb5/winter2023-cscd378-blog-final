@@ -21,6 +21,45 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+if (isset($_POST['news_email'])) {
+    $email = $_POST['email'];
+    $type = "newsletter addition";
+    // insert the new comment into the database
+    $sql = "INSERT INTO newsletter (email) VALUES ('$email')";
+    if ($conn->query($sql) === TRUE) {
+        $success =  "Email successfully added";
+        // Log the comment into logger database
+        $sql_logger = "INSERT INTO logger(type) VALUES ('$type')";
+        if ($conn->query($sql_logger) !== TRUE) {
+            echo "Error logging newsletter email: " . $conn->error;
+        }
+    } else {
+        $success =  "Error saving email: " . $conn->error;
+    }
+}
+
+// handle login form submission
+if (isset($_POST['login'])) {
+    $user = $_POST['username'];
+    $password = $_POST['password'];
+    $type = "admin login";
+
+    // check if username and password match
+    $sql = "SELECT username from teaspot.logindb WHERE username = '$user' AND password = '$password' LIMIT 1";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+        // login successful
+        echo "Login successful";
+        // redirect to home page or another page
+        header("Location: index.php");
+        exit();
+    } else {
+        // login failed
+        $error = "Incorrect username or password";
+    }
+}
+
 // if the form is submitted to post a comment
 if (isset($_POST['http_post_comment'])) {
     $user = $_POST['user'];

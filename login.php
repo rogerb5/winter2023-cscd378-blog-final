@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <?php
 // start the session
-include "logindb.php";
-include "newsletter.php"
+include "comments.php"
 
 ?>
 <html lang="en">
