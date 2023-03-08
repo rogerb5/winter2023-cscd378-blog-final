@@ -3,4 +3,9 @@
 3) extract phpMyAdmin to laragon/etc/apps
 4) open database
 5) create database "teaspot"
+6) select database "teaspot"
 6) import teaspot.db
+
+
+All php files will need to be opened in phpstorm or laragon via right click web->www->folder.
+keep in mind that your server will have to be started in order to view our pages.
