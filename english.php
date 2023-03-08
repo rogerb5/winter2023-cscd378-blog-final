@@ -20,15 +20,15 @@ $_SESSION['page_id'] = 2;
 <body>
 
     <header class="index-header">
-        <a href="index.html">
+        <a href="index.php">
             <img src="assets/svg/logo.svg" class="logo" alt="Teaspot logo">
         </a>
         <div class="info-div">
             <h1 class="p-header">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
-            <!-- <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo"> -->
-            <a href="login.html">
+            <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo">
+            <a href="login.php">
                 <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon">
             </a>
             <img src="assets/svg/ham.svg" class="svg-n hamburger" alt="hamburger menu logo">
@@ -107,9 +107,7 @@ $_SESSION['page_id'] = 2;
                 <h2>Comments</h2>
                 <?php
 
-
                 include 'comments.php';
-
                 ?>
             </div>
 
@@ -130,20 +128,17 @@ $_SESSION['page_id'] = 2;
                 </form>
             </section>
 
-
-
         </section>
     </section>
     <footer>
         <section class="f-links">
-            <a href="index.html" class="f-link">Home</a>
-            <a href="about.html" class="f-link">About</a>
-            <a href="login.html" class="f-link">Login</a>
+            <a href="index.php" class="f-link">Home</a>
+            <a href="#" class="f-link">About</a>
+            <a href="login.php" class="f-link">Login</a>
         </section>
         <form>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" id="newsletter" name="" />
-            <button data-filter="" class="btn">Submit</button>
         </form>
     </footer>
     <!-- <script src="" async defer></script> -->
