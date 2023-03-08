@@ -1,6 +1,5 @@
 1) Install laragon
 2) Download phpMyAdmin
-
 3) change the name of "phpMyAdmin-5.2.1-all-languages" to "phpMyAdmin"
 4) extract phpMyAdmin to laragon/etc/apps
 5) start laragon 

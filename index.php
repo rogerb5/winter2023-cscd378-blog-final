@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <?php
-include "comments.php";
+include "setconfig.php";
 
 ?>
 <head>
