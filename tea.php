@@ -124,7 +124,7 @@ $_SESSION['page_id'] = 6;
     <footer>
         <section class="f-links">
             <a href="index.php" class="f-link">Home</a>
-            <a href="#" class="f-link">About</a>
+            <a href="About.php" class="f-link">About</a>
             <a href="login.php" class="f-link">Login</a>
         </section>
             <form action="" method="POST">
