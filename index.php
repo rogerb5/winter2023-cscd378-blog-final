@@ -54,13 +54,17 @@ include "setconfig.php";
             <!-- <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo" title="Dark Mode Logo"> -->
             <?php if(isset($_COOKIE['logged_in'])) { ?>
                 <form action="logout.php" method="POST">
-                    <input type="submit" value="Logout" name="logout">
+                    
                 </form>
+            <a href="logout.php">
+                <img src="assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
+            </a>
             <?php } else { ?>
                 <a href="login.php">
                     <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
                 </a>
             <?php } ?>
+            
             <img src="assets/svg/ham.svg" class="svg-n hamburger" alt="hamburger menu logo" title="Filter Menu Logo">
         </nav>
     </header>
