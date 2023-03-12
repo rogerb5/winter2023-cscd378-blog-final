@@ -149,7 +149,8 @@ $_SESSION['page_id'] = 1;
                 </div>
             <?php }?>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
-            <input type="text" id="newsletter" name="" />
+            <input type="text" name="email" id = "email" />
+            <input type="submit" value="Add" name = "news_email">
         </form>
     </footer>
 
