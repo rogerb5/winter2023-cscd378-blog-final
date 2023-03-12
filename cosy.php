@@ -28,10 +28,13 @@ $_SESSION['page_id'] = 3;
             <h1 class="p-header">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
-            <?php if(isset($_COOKIE['logged_in'])) { ?>
-                <form action="logout.php" method="POST">
-                    <input type="submit" value="Logout" name="logout">
-                </form>
+        <?php if(isset($_COOKIE['logged_in'])) { ?>
+            <form action="logout.php" method="POST">
+                
+            </form>
+            <a href="logout.php">
+                <img src="assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
+            </a>
             <?php } else { ?>
                 <a href="login.php">
                     <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
