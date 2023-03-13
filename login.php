@@ -58,7 +58,7 @@ include "setconfig.php"
 
 <footer>
     <section class="f-links">
-        <a href="index.html" class="f-link">Home</a>
+        <a href="index.php" class="f-link">Home</a>
         <a href="About.php" class="f-link">About</a>
         <a href="login.php" class="f-link">Login</a>
     </section>

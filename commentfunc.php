@@ -26,8 +26,6 @@ if (isset($_POST['delete_comment'])) {
     $sql = "DELETE FROM commentdb WHERE commentID = $comment_id";
     if ($conn->query($sql) === TRUE) {
         $_SESSION['success'] = "Comment deleted successfully";
-        header("Location: ".$_SERVER['PHP_SELF']);
-        exit;
     } else {
         $_SESSION['error'] = "Error deleting comment: " . $conn->error;
     }
@@ -42,26 +40,34 @@ if (isset($_POST['http_post_comment'])) {
     if (strlen($user) > 14) {
         // set session variable for error message
         $_SESSION['comment_error'] = 'Username is too long';
-
-        // redirect back to form page
-        header("Location: ".$_SERVER['PHP_SELF']);
         exit;
     }
 
-    // insert the new comment into the database
-    $sql = "INSERT INTO commentdb (user, message,page_id) VALUES ('$user', '$message',$page_id)";
-    if ($conn->query($sql) === TRUE) {
-        echo "Comment posted successfully";
+    // prepare the SQL statement
+    $stmt = $conn->prepare("INSERT INTO commentdb (user, message, page_id) VALUES (?, ?, ?)");
+    $stmt->bind_param("ssi", $user, $message, $page_id);
+
+    // execute the prepared statement
+    if ($stmt->execute()) {
+        // set session variable for success message
+        $_SESSION['comment_success'] = "Comment posted successfully";
 
         // Log the comment into logger database
-        $sql_logger = "INSERT INTO logger(user, message, type) VALUES ('$user','$message','$type')";
-        if ($conn->query($sql_logger) !== TRUE) {
+        $stmt_logger = $conn->prepare("INSERT INTO logger(user, message, type) VALUES (?, ?, ?)");
+        $stmt_logger->bind_param("sss", $user, $message, $type);
+
+        if ($stmt_logger->execute() !== TRUE) {
             echo "Error logging comment: " . $conn->error;
         }
     } else {
-        echo "Error posting comment: " . $conn->error;
+        // set session variable for error message
+        $_SESSION['comment_error'] = "Error posting comment: " . $conn->error;
     }
+
+// redirect back to form page
+
 }
+
 // on the form page, display the error message if it exists
 if (isset($_SESSION['comment_error'])) {
     echo '<p><div class="error-message">' . $_SESSION['comment_error'] . '</div></p>';

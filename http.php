@@ -27,10 +27,13 @@ $_SESSION['page_id'] = 1;
             <h1 class="p-header">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
-            <?php if(isset($_COOKIE['logged_in'])) { ?>
-                <form action="logout.php" method="POST">
-                    <input type="submit" value="Logout" name="logout">
-                </form>
+        <?php if(isset($_COOKIE['logged_in'])) { ?>
+            <form action="logout.php" method="POST">
+                
+            </form>
+            <a href="logout.php">
+                <img src="assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
+            </a>
             <?php } else { ?>
                 <a href="login.php">
                     <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
@@ -136,7 +139,7 @@ $_SESSION['page_id'] = 1;
     <footer>
         <section class="f-links">
             <a href="index.php" class="f-link">Home</a>
-            <a href="#" class="f-link">About</a>
+            <a href="About.php" class="f-link">About</a>
             <a href="login.php" class="f-link">Login</a>
         </section>
         <form action="" method="POST">
@@ -146,7 +149,8 @@ $_SESSION['page_id'] = 1;
                 </div>
             <?php }?>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
-            <input type="text" id="newsletter" name="" />
+            <input type="text" name="email" id = "email" />
+            <input type="submit" value="Add" name = "news_email">
         </form>
     </footer>
 

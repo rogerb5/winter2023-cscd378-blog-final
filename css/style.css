@@ -277,6 +277,7 @@ form.admin-form {
     align-items: center;
     box-shadow: 0px 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
+
 .error-message {
     color: red;
     font-size: 14px;
@@ -284,7 +285,7 @@ form.admin-form {
     margin-top: 10px;
 }
 
-.success-message{
+.success-message {
     color: green;
     font-size: 14px;
     margin-bottom: 10px;
@@ -297,6 +298,7 @@ label {
     margin-left: 10px;
     font-weight: 700;
 }
+
 input[type="password"],
 input[type="text"] {
     border: none;
@@ -346,6 +348,14 @@ footer a.f-link {
 .comment {
     display: flex;
     align-items: flex-start;
+}
+
+.comment .message {
+    flex-shrink: 0;
+    max-width: 800px; /* adjust as needed */
+    overflow-wrap: break-word;
+    margin-right: 10px;
+    white-space: pre-wrap; /* preserve new lines and whitespace */
 }
 
 .name {
@@ -441,6 +451,17 @@ article.blog-article img {
     will-change: transform;
 }
 
+/* This is the loggin delete button css classes */
+/* .active class means user has logged in and it will be added in PHP */
+button.btn-delete.active {
+    display: block;
+}
+
+button.btn-delete {
+    display: none;
+}
+
+
 /* Modal Image container */
 article figure.article-figure {
     position: relative;
@@ -472,4 +493,3 @@ p.article-p {
 
 /* Add MOBILE SCREEN MEDIA QUERIES */
 @media (max-width: 600px) {}
-
