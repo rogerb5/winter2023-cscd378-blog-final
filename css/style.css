@@ -350,6 +350,14 @@ footer a.f-link {
     align-items: flex-start;
 }
 
+.comment .message {
+    flex-shrink: 0;
+    max-width: 800px; /* adjust as needed */
+    overflow-wrap: break-word;
+    margin-right: 10px;
+    white-space: pre-wrap; /* preserve new lines and whitespace */
+}
+
 .name {
     white-space: nowrap;
 }
