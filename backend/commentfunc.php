@@ -90,7 +90,7 @@ if ($result->num_rows > 0) {
             echo '<form method="POST" action="" class="delete-form">
             <input type="hidden" name="comment_id" value="' . $row['commentID'] . '">
             <button type="submit" class="delete-button-trash" name="delete_comment">
-            <img src="assets/svg/trash.svg" alt="Delete">
+            <img src="../assets/svg/trash.svg" alt="Delete">
             </button>
             </form>';
         }

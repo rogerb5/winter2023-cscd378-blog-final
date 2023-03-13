@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <?php
-include "setconfig.php";
+include "backend/varconfig.php";
 
 ?>
 <head>
@@ -53,14 +53,14 @@ include "setconfig.php";
         <nav class="icon-holders">
             <!-- <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo" title="Dark Mode Logo"> -->
             <?php if(isset($_COOKIE['logged_in'])) { ?>
-                <form action="logout.php" method="POST">
+                <form action="backend/logout.php" method="POST">
                     
                 </form>
-            <a href="logout.php">
+            <a href="backend/logout.php">
                 <img src="assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
             </a>
             <?php } else { ?>
-                <a href="login.php">
+                <a href="backend/login.php">
                     <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
                 </a>
             <?php } ?>
@@ -103,7 +103,7 @@ include "setconfig.php";
                     you with some delicious recipes for Matcha and Earl Grey baked goods.
                 </blockquote>
 
-                <a href="tea.php" class="article-a" id="article-a">See Blog</a>
+                <a href="blogposts/tea.php" class="article-a" id="article-a">See Blog</a>
 
             </article>
 
@@ -121,7 +121,7 @@ include "setconfig.php";
                     delicious cup of tea every time.
                 </blockquote>
 
-                <a href="english.php" class="article-a" id="article-a">See Blog</a>
+                <a href="blogposts/english.php" class="article-a" id="article-a">See Blog</a>
 
             </article>
 
@@ -139,7 +139,7 @@ include "setconfig.php";
                     statement about your style and taste
                 </blockquote>
 
-                <a href="cosy.php" class="article-a" id="article-a">See Blog</a>
+                <a href="blogposts/cosy.php" class="article-a" id="article-a">See Blog</a>
 
             </article>
 
@@ -158,7 +158,7 @@ include "setconfig.php";
                     guests.
                 </blockquote>
 
-                <a href="party.php" class="article-a" id="article-a">See Blog</a>
+                <a href="blogposts/party.php" class="article-a" id="article-a">See Blog</a>
 
             </article>
 
@@ -177,7 +177,7 @@ include "setconfig.php";
                     color and a delicate, earthy flavor to your recipes. Here are some of our favorite Matcha recipes:
                 </blockquote>
 
-                <a href="routine.php" class="article-a" id="article-a">See Blog</a>
+                <a href="blogposts/routine.php" class="article-a" id="article-a">See Blog</a>
 
             </article>
 
@@ -196,7 +196,7 @@ include "setconfig.php";
                     teapots, and the HTTP 418 error.
                 </blockquote>
 
-                <a href="http.php" class="article-a" id="article-a">See Blog</a>
+                <a href="blogposts/http.php" class="article-a" id="article-a">See Blog</a>
 
             </article>
         </section>
@@ -205,15 +205,15 @@ include "setconfig.php";
     <footer>
         <section class="f-links">
             <a href="index.php" class="f-link">Home</a>
-            <a href="About.php" class="f-link">About</a>
-            <a href="login.php" class="f-link">Login</a>
+            <a href="blogposts/About.php" class="f-link">About</a>
+            <a href="backend/login.php" class="f-link">Login</a>
         </section>
         <form action="" method="POST">
-            <?php if (!empty($success)) { ?>
-            <div class="success-message">
-                <?php echo $success; ?>
-            </div>
-            <?php }?>
+            <?php if (!empty($success) || !empty($error)) { ?>
+                <div class="<?php echo (!empty($error)) ? 'error-message' : 'success-message'; ?>">
+                    <?php echo (!empty($error)) ? $error : $success; ?>
+                </div>
+            <?php } ?>
             <p><label for="email" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" name="email" id = "email" />
             <input type="submit" value="Add" name = "news_email">

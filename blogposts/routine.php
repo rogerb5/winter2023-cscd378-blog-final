@@ -4,7 +4,7 @@
 session_start();
 
 // set the page ID in the session
-$_SESSION['page_id'] = 6;
+$_SESSION['page_id'] = 5;
 ?>
 <html>
 
@@ -14,43 +14,44 @@ $_SESSION['page_id'] = 6;
     <title>The Teaspot</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
     <header class="index-header">
-        <a href="index.php">
-            <img src="assets/svg/logo.svg" class="logo" alt="Teaspot logo">
+        <a href="../index.php">
+            <img src="../assets/svg/logo.svg" class="logo" alt="Teaspot logo">
         </a>
         <div class="info-div">
             <h1 class="p-header">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
         <?php if(isset($_COOKIE['logged_in'])) { ?>
-            <form action="logout.php" method="POST">
+            <form action="../backend/logout.php" method="POST">
                 
             </form>
-            <a href="logout.php">
-                <img src="assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
+            <a href="../backend/logout.php">
+                <img src="../assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
             </a>
             <?php } else { ?>
-                <a href="login.php">
-                    <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
+                <a href="../backend/login.php">
+                    <img src="../assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
                 </a>
             <?php } ?>
-            <img src="assets/svg/ham.svg" class="svg-n hamburger" alt="hamburger menu logo">
         </nav>
     </header>
 
     <section class="whole-article">
         <figure>
-            <img class="article-img" src="assets/img/1.jpg" alt="">
+            <img class="article-img" src="../assets/img/5.jpg" alt="">
         </figure>
+
         <section class="article-info">
+
             <section class="article-nav">
                 <figcaption>
-                    Baking with Tea
+                    Tea as routine
                 </figcaption>
                 <figcaption>
                     3/15/2023
@@ -79,19 +80,13 @@ $_SESSION['page_id'] = 6;
                     Matcha Cookies: These chewy and crunchy cookies are a great way to enjoy matcha in a more portable
                     form. They're easy to make and they're perfect for on-the-go snacking.
                 </li>
-
                 <li>
                     Matcha Donuts: These donuts are made with a soft and tender dough that is infused with matcha
                     powder. They're perfect for a special breakfast treat or for a sweet and indulgent dessert.
                 </li>
             </ul>
             </p>
-
-            <p class="article-p last-p">
-                Earl Grey: Earl Grey is a black tea that is flavored with bergamot oil, and it has a unique and slightly
-                citrusy flavor. When used in baking, Earl Grey can add a subtle and sophisticated flavor to your
-                recipes. Here are some of our favorite Earl Grey recipes:
-            </p>
+            <p class="article-p last-p"></p>
 
 
             <!-- Section where comments will be added -->
@@ -100,7 +95,7 @@ $_SESSION['page_id'] = 6;
                 <?php
 
 
-                include 'commentfunc.php';
+                include __DIR__ . "/../backend/commentfunc.php"
 
                 ?>
             </div>
@@ -126,16 +121,16 @@ $_SESSION['page_id'] = 6;
     </section>
     <footer>
         <section class="f-links">
-            <a href="index.php" class="f-link">Home</a>
+            <a href="../index.php" class="f-link">Home</a>
             <a href="About.php" class="f-link">About</a>
-            <a href="login.php" class="f-link">Login</a>
+            <a href="../backend/login.php" class="f-link">Login</a>
         </section>
-            <form action="" method="POST">
-                <?php if (!empty($success)) { ?>
-                    <div class="success-message">
-                        <?php echo $success; ?>
-                    </div>
-                <?php }?>
+        <form action="" method="POST">
+            <?php if (!empty($success) || !empty($error)) { ?>
+                <div class="<?php echo (!empty($error)) ? 'error-message' : 'success-message'; ?>">
+                    <?php echo (!empty($error)) ? $error : $success; ?>
+                </div>
+            <?php } ?>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" name="email" id = "email" />
             <input type="submit" value="Add" name = "news_email">

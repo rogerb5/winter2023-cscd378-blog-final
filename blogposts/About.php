@@ -14,7 +14,7 @@ session_start();
     <title>The Teaspot</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <style>
@@ -30,8 +30,8 @@ session_start();
 
 <body>
 <header class="index-header">
-    <a href="index.php">
-        <img src="assets/svg/logo.svg" class="logo" alt="The Teaspot logo" title="The Teaspot logo">
+    <a href="../index.php">
+        <img src="../assets/svg/logo.svg" class="logo" alt="The Teaspot logo" title="The Teaspot logo">
     </a>
     <div class="info-div">
         <h1 class="p-header" title="The place to spill the tea">The place to spill the tea</h1>
@@ -39,18 +39,17 @@ session_start();
     <nav class="icon-holders">
         <!-- <img src="assets/svg/dark-mode.svg" class="svg-n svg-dark-m" alt="dark mode logo" title="Dark Mode Logo"> -->
         <?php if(isset($_COOKIE['logged_in'])) { ?>
-            <form action="logout.php" method="POST">
+            <form action="../backend/logout.php" method="POST">
                 
             </form>
-            <a href="logout.php">
-                <img src="assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
+            <a href="../backend/logout.php">
+                <img src="../assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
             </a>
         <?php } else { ?>
-            <a href="login.php">
-                <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
+            <a href="../backend/login.php">
+                <img src="../assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
             </a>
         <?php } ?>
-        <img src="assets/svg/ham.svg" class="svg-n hamburger" alt="hamburger menu logo" title="Filter Menu Logo">
     </nav>
     <!-- header content here -->
 </header>
@@ -93,16 +92,16 @@ session_start();
     </section>
 <footer>
     <section class="f-links">
-        <a href="index.php" class="f-link">Home</a>
+        <a href="../index.php" class="f-link">Home</a>
         <a href="About.php" class="f-link">About</a>
-        <a href="login.php" class="f-link">Login</a>
+        <a href="../backend/login.php" class="f-link">Login</a>
     </section>
     <form action="" method="POST">
-        <?php if (!empty($success)) { ?>
-            <div class="success-message">
-                <?php echo $success; ?>
+        <?php if (!empty($success) || !empty($error)) { ?>
+            <div class="<?php echo (!empty($error)) ? 'error-message' : 'success-message'; ?>">
+                <?php echo (!empty($error)) ? $error : $success; ?>
             </div>
-        <?php }?>
+        <?php } ?>
         <p><label for="email" class="newsletter">Sign up for our newsletter:</label></p>
         <input type="text" name="email" id = "email" />
         <input type="submit" value="Add" name = "news_email">

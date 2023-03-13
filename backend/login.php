@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 // start the session
-include "setconfig.php"
+include "../backend/varconfig.php"
 
 ?>
 <html lang="en">
@@ -12,20 +12,20 @@ include "setconfig.php"
     <title>The Teaspot</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 <header class="index-header">
-    <a href="index.php">
-        <img src="assets/svg/logo.svg" class="logo" alt="Teaspot logo">
+    <a href="../index.php">
+        <img src="../assets/svg/logo.svg" class="logo" alt="Teaspot logo">
     </a>
     <div class="info-div">
         <h1 class="p-header">The place to spill the tea</h1>
     </div>
     <nav class="icon-holders">
         <a href = "login.php">
-        <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon">
+        <img src="../assets/svg/avatar.svg" class="svg-n avatar" alt="login icon">
         </a>
 
     </nav>
@@ -58,8 +58,8 @@ include "setconfig.php"
 
 <footer>
     <section class="f-links">
-        <a href="index.php" class="f-link">Home</a>
-        <a href="About.php" class="f-link">About</a>
+        <a href="../index.php" class="f-link">Home</a>
+        <a href="../blogposts/About.php" class="f-link">About</a>
         <a href="login.php" class="f-link">Login</a>
     </section>
     <form action="" method="POST">

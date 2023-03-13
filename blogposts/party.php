@@ -14,38 +14,37 @@ $_SESSION['page_id'] = 4;
     <title>The Teaspot</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
     <header class="index-header">
-        <a href="index.php">
-            <img src="assets/svg/logo.svg" class="logo" alt="Teaspot logo">
+        <a href="../index.php">
+            <img src="../assets/svg/logo.svg" class="logo" alt="Teaspot logo">
         </a>
         <div class="info-div">
             <h1 class="p-header">The place to spill the tea</h1>
         </div>
         <nav class="icon-holders">
         <?php if(isset($_COOKIE['logged_in'])) { ?>
-            <form action="logout.php" method="POST">
+            <form action="../backend/logout.php" method="POST">
                 
             </form>
-            <a href="logout.php">
-                <img src="assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
+            <a href="../backend/logout.php">
+                <img src="../assets/svg/logout.svg" class="svg-n logout" alt="logout icon" title="Logout" />
             </a>
             <?php } else { ?>
-                <a href="login.php">
-                    <img src="assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
+                <a href="../backend/login.php">
+                    <img src="../assets/svg/avatar.svg" class="svg-n avatar" alt="login icon" title="User Login Icon">
                 </a>
             <?php } ?>
-            <img src="assets/svg/ham.svg" class="svg-n hamburger" alt="hamburger menu logo">
         </nav>
     </header>
 
     <section class="whole-article">
         <figure>
-            <img class="article-img" src="assets/img/4.jpg" alt="">
+            <img class="article-img" src="../assets/img/4.jpg" alt="">
         </figure>
 
         <section class="article-info">
@@ -119,7 +118,7 @@ $_SESSION['page_id'] = 4;
                 <?php
 
 
-                include 'commentfunc.php';
+                include __DIR__ . "/../backend/commentfunc.php"
 
                 ?>
             </div>
@@ -145,16 +144,16 @@ $_SESSION['page_id'] = 4;
     </section>
     <footer>
         <section class="f-links">
-            <a href="index.php" class="f-link">Home</a>
+            <a href="../index.php" class="f-link">Home</a>
             <a href="About.php" class="f-link">About</a>
-            <a href="login.php" class="f-link">Login</a>
+            <a href="../backend/login.php" class="f-link">Login</a>
         </section>
         <form action="" method="POST">
-            <?php if (!empty($success)) { ?>
-                <div class="success-message">
-                    <?php echo $success; ?>
+            <?php if (!empty($success) || !empty($error)) { ?>
+                <div class="<?php echo (!empty($error)) ? 'error-message' : 'success-message'; ?>">
+                    <?php echo (!empty($error)) ? $error : $success; ?>
                 </div>
-            <?php }?>
+            <?php } ?>
             <p><label for="newsletter" class="newsletter">Sign up for our newsletter:</label></p>
             <input type="text" name="email" id = "email" />
             <input type="submit" value="Add" name = "news_email">
